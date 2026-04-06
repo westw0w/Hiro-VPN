@@ -1,0 +1,51 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+.main {
+  padding: 40px 0;
+}
+
+.title {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  margin: 0 0 32px 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+  justify-self: center;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 20px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+
+.questBtn {
+  border: none;
+  background-color: $color-american-rose;
+  color: $color-royal-white;
+  padding: 5px 14px;
+  border-radius: 40px;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+}

@@ -1,0 +1,288 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+.quests {
+  width: 100%;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 32px 0;
+}
+
+.heading {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 44px;
+  color: $color-royal-white;
+}
+
+.close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 576px 1fr;
+  gap: 24px;
+  margin: 0 0 32px 0;
+  align-items: center;
+
+  @include vp-1279 {
+    grid-template-columns: 452px 1fr;
+  }
+
+  @include vp-1023 {
+    grid-template-columns: 348px 1fr;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wheelCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid $color-solid-graphite;
+  border-radius: 8px;
+  padding: 24px;
+  font-family: $ff-main;
+}
+
+.wheelCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wheelCardHeadContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.wheelTitle {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: $color-gray-nickel;
+  margin: 0;
+}
+
+.streakWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.streakCaption {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.streakList {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0;
+  padding: 8px 16px;
+  list-style-type: none;
+  position: relative;
+  border: 1px solid $color-solid-graphite;
+  border-radius: 8px;
+}
+
+.streakValue {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: $color-royal-white;
+  position: relative;
+}
+
+.progressBar {
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 16px;
+  background-color: $color-american-rose;
+  transition: width 0.3s ease;
+}
+
+.streakIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.rewardBtn {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-bright-black;
+  display: flex;
+  gap: 16px;
+  padding: 8px;
+  background-color: $color-royal-white;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 24px;
+  border: 1px solid $color-solid-graphite;
+  border-radius: 8px;
+  position: relative;
+}
+
+.cardTag {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 24px;
+  font-family: $ff-main;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  letter-spacing: 0.01em;
+  color: $color-royal-white;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  background: $color-american-rose;
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardTagCompleted {
+  background-color: $color-royal-white;
+  color: $color-bright-black;
+}
+
+.cardTitle {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  margin: 0 0 8px 0;
+}
+
+.cardText {
+  font-family: $ff-main;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: $color-gray-nickel;
+  margin: 0;
+}
+
+.cardBtn {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background: $color-royal-white;
+  border-radius: 40px;
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-bright-black;
+  border: none;
+  cursor: pointer;
+  transition: opacity $transition-300;
+
+  &:hover,
+  &:focus {
+    opacity: 0.4;
+  }
+}
+
+.cardPromo {
+  background-color: $color-royal-white;
+  border-radius: 0;
+
+  & .cardTitle {
+    color: $color-bright-black;
+  }
+
+  & .cardText {
+    color: $color-solid-graphite;
+  }
+
+  & .cardBtn {
+    background-color: $color-american-rose;
+    color: $color-royal-white;
+  }
+}
+
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+
+  @include vp-1279 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}

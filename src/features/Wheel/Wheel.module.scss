@@ -1,0 +1,303 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+.wheel {
+  width: 100%;
+  position: relative;
+}
+
+.wheelContainer {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -24px 16px -24px;
+
+  @include vp-767 {
+    max-width: 343px;
+  }
+}
+
+.prizesList {
+  margin: 0 0 0 -60px;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  will-change: transform;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.prizeItem {
+  padding: 15px 0;
+  border: 1px solid $color-gray-nickel;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prizeImage {
+  width: 120px;
+  height: 120px;
+}
+
+.prizeTitle {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-gray-nickel;
+  margin: 0;
+}
+
+.prizeDescription {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  color: $color-gray-nickel;
+  margin: 0;
+}
+
+.winStroke {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spinButton {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 16px;
+  background: $color-american-rose;
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background-color: $color-bright-black;
+  border-radius: 28px;
+  padding: 32px 24px;
+  max-width: 476px;
+  width: 100%;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  @include vp-767 {
+    max-width: 343px;
+    padding: 32px 16px;
+  }
+}
+
+.modalTitle {
+  font-family: $ff-main;
+  max-width: 50%;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 44px;
+  display: flex;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.modalPrize {
+  display: flex;
+  align-items: center;
+}
+
+.modalPrizeTitle {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.modalPrizeDescription {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.modalMessage {
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: $color-royal-white;
+  margin: 0;
+}
+
+.modalButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  background: $color-american-rose;
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  font-family: $ff-main;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $color-royal-white;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-300;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cooldownOverlay {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.timerTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timerValue {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 44px;
+  display: flex;
+  color: $color-royal-white;
+  padding: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid $color-royal-white;
+  border-radius: 4px;
+  width: 40px;
+}
+
+.timerSeparator {
+  font-family: $ff-head;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  color: $color-royal-white;
+}
+
+.timerBottom {
+  display: flex;
+  gap: 26px;
+}
+
+.timerDescription {
+  font-family: $ff-main;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: $color-gray-nickel;
+  width: 88px;
+  text-align: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 86px;
+}

@@ -1,0 +1,164 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.burgerIcon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color $transition-300;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  @include vp-1279 {
+    display: flex;
+  }
+}
+
+.languageWrapper {
+  position: relative;
+}
+
+.language {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  color: $color-royal-white;
+  font-family: $ff-head;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 14px 24px;
+  align-items: center;
+  border-radius: 40px;
+  transition: background-color $transition-300;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+  transition: transform $transition-300;
+}
+
+.arrowDown {
+  transform: rotate(0deg);
+  transition: transform $transition-300;
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: $color-bright-black;
+  border: 1px solid $color-royal-white;
+  border-radius: 12px;
+  min-width: 120px;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.languageOption {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  color: $color-royal-white;
+  font-family: $ff-head;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 12px 24px;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color $transition-300;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.languageOptionActive {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+}
+
+.burger {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 80px;
+  z-index: 70;
+  padding: 20px 18px 28px;
+  background: rgba(18, 20, 24, 0.98);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  animation: burger-in 0.22s ease-out;
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+  }
+}
+
+.burgerClose {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  animation: backdrop-in $transition-300;
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+  }
+}
+
+@keyframes burger-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

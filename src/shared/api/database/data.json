@@ -1,0 +1,79 @@
+{
+  "user": {
+    "email": "admin@admin.com",
+    "password": "123",
+    "consecutiveSpinDays": 0,
+    "lastSpinTime": null,
+    "rewardClaimed": true,
+    "availableBonuses": {
+      "share": true,
+      "review": true,
+      "invite": true,
+      "likes": true,
+      "googleReview": true,
+      "yandexReview": true,
+      "telegramSubscription": true
+    }
+  },
+  "prizes": {
+    "discount5": {
+      "title": "Скидка",
+      "description": "5%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "discount10": {
+      "title": "Скидка",
+      "description": "10%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "discount70": {
+      "title": "Скидка",
+      "description": "70%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "discount30": {
+      "title": "Скидка",
+      "description": "30%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "free6": {
+      "title": "Бесплатные",
+      "description": "6 часов",
+      "image": "free",
+      "message": "Они уже добавлены к вашей подписке"
+    },
+    "discount20": {
+      "title": "Скидка",
+      "description": "20%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "tryagain": {
+      "title": "Попробуйте",
+      "description": "Завтра",
+      "image": "try"
+    },
+    "discount40": {
+      "title": "Скидка",
+      "description": "40%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "discount50": {
+      "title": "Скидка",
+      "description": "50%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    },
+    "discount60": {
+      "title": "Скидка",
+      "description": "60%",
+      "image": "prize",
+      "message": "Активируйте в течение 24 часов"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "KellySlab";
+  src: url("@/shared/assets/fonts/kellySlab/KellySlab-Regular.woff2") format("woff2"),
+    url("@/shared/assets/fonts/kellySlab/KellySlab-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AlumniSans";
+  src: url("@/shared/assets/fonts/alumniSans/AlumniSans-Thin.woff2") format("woff2"),
+    url("@/shared/assets/fonts/alumniSans/AlumniSans-Thin.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
