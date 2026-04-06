@@ -9,6 +9,7 @@ const SVG_FOLDER_PATH = path.resolve(SRC_PATH, 'assets', 'svg-sprite')
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Hiro-VPN/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
