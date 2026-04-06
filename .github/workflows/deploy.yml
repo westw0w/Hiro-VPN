@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Type check
-        run: npx tsc -b --verbose || echo "TypeScript check failed but continuing"
+        run: npm run type-check --verbose
         continue-on-error: true
 
       - name: Build

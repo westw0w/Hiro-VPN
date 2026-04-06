@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "type-check": "tsc -b"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
